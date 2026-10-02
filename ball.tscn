@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b5lrwd7uxyxiv"]
+
+[ext_resource type="Script" uid="uid://d371tmc4tvhh1" path="res://ball.gd" id="1_x8fbi"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bu6l1"]
+friction = 0.1
+bounce = 0.4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0xr7q"]
+radius = 12.0
+
+[node name="Ball" type="RigidBody2D" unique_id=1817978176]
+physics_material_override = SubResource("PhysicsMaterial_bu6l1")
+script = ExtResource("1_x8fbi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=331062537]
+shape = SubResource("CircleShape2D_0xr7q")

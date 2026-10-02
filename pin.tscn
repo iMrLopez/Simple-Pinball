@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dcqnp3aety2bg"]
+
+[ext_resource type="Script" uid="uid://rxrlr5fndw2r" path="res://pin.gd" id="1_nikp6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c85u6"]
+bounce = 0.8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0xr7q"]
+
+[node name="Pin" type="StaticBody2D" unique_id=1457762437]
+physics_material_override = SubResource("PhysicsMaterial_c85u6")
+script = ExtResource("1_nikp6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=33389866]
+shape = SubResource("CircleShape2D_0xr7q")

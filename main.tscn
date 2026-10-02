@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://5fcieu820oib"]
+
+[ext_resource type="Script" uid="uid://cngxufnv5f7n8" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://doaqptd2ovala" path="res://walls.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dcqnp3aety2bg" path="res://pin.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://34kbcu1x5iuw" path="res://flipper.gd" id="4_1bvp3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bu6l1"]
+bounce = 0.3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xr7q"]
+size = Vector2(70, 14)
+
+[node name="Main" type="Node2D" unique_id=2106436588]
+script = ExtResource("1_h2yge")
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1369990136]
+physics_material_override = SubResource("PhysicsMaterial_bu6l1")
+script = ExtResource("1_ig7tw")
+
+[node name="Pins" type="Node2D" parent="." unique_id=217781377]
+
+[node name="Pin" parent="Pins" unique_id=1457762437 instance=ExtResource("3_h2yge")]
+position = Vector2(159, 116)
+
+[node name="Pin" parent="Pins/Pin" unique_id=1351300072 instance=ExtResource("3_h2yge")]
+position = Vector2(3, 298)
+
+[node name="Pin2" parent="Pins/Pin" unique_id=470706853 instance=ExtResource("3_h2yge")]
+position = Vector2(100, 319)
+
+[node name="Pin3" parent="Pins/Pin" unique_id=1047725115 instance=ExtResource("3_h2yge")]
+position = Vector2(156, 392)
+
+[node name="Pin7" parent="Pins/Pin" unique_id=682554553 instance=ExtResource("3_h2yge")]
+position = Vector2(278, 388)
+
+[node name="Pin8" parent="Pins/Pin" unique_id=594888874 instance=ExtResource("3_h2yge")]
+position = Vector2(167, 509)
+
+[node name="Pin11" parent="Pins/Pin" unique_id=1676197366 instance=ExtResource("3_h2yge")]
+position = Vector2(-63, 385)
+
+[node name="Pin4" parent="Pins/Pin" unique_id=406931066 instance=ExtResource("3_h2yge")]
+position = Vector2(32, 376)
+
+[node name="Pin5" parent="Pins/Pin" unique_id=606282843 instance=ExtResource("3_h2yge")]
+position = Vector2(95, 448)
+points = 500
+color = Color(0.5288972, 0.2840839, 1.92523e-07, 1)
+
+[node name="Pin2" parent="Pins" unique_id=1517216539 instance=ExtResource("3_h2yge")]
+position = Vector2(256, 137)
+
+[node name="Pin3" parent="Pins" unique_id=1190632755 instance=ExtResource("3_h2yge")]
+position = Vector2(312, 210)
+
+[node name="Pin6" parent="Pins" unique_id=1507777413 instance=ExtResource("3_h2yge")]
+position = Vector2(365, 286)
+
+[node name="Pin7" parent="Pins" unique_id=450972453 instance=ExtResource("3_h2yge")]
+position = Vector2(434, 206)
+
+[node name="Pin8" parent="Pins" unique_id=138702066 instance=ExtResource("3_h2yge")]
+position = Vector2(357, 132)
+
+[node name="Pin9" parent="Pins" unique_id=932638396 instance=ExtResource("3_h2yge")]
+position = Vector2(146, 300)
+
+[node name="Pin10" parent="Pins" unique_id=1054636586 instance=ExtResource("3_h2yge")]
+position = Vector2(265, 352)
+
+[node name="Pin11" parent="Pins" unique_id=205611667 instance=ExtResource("3_h2yge")]
+position = Vector2(93, 203)
+
+[node name="Pin4" parent="Pins" unique_id=1461098847 instance=ExtResource("3_h2yge")]
+position = Vector2(188, 194)
+
+[node name="Pin5" parent="Pins" unique_id=163815428 instance=ExtResource("3_h2yge")]
+position = Vector2(251, 266)
+points = 500
+color = Color(0.5288972, 0.2840839, 1.92523e-07, 1)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1938660732]
+unique_name_in_owner = true
+
+[node name="ScoreLabel" type="Label" parent="UI" unique_id=1249317796]
+unique_name_in_owner = true
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 70.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 30
+metadata/_edit_use_anchors_ = true
+
+[node name="LeftFlipper" type="AnimatableBody2D" parent="." unique_id=1807612977]
+position = Vector2(190, 860)
+script = ExtResource("4_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftFlipper" unique_id=1105899615]
+shape = SubResource("RectangleShape2D_0xr7q")
+
+[node name="RightFlipper" type="AnimatableBody2D" parent="." unique_id=1092256740]
+position = Vector2(350, 860)
+script = ExtResource("4_1bvp3")
+action = "flip_right"
+is_left = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightFlipper" unique_id=1991827088]
+shape = SubResource("RectangleShape2D_0xr7q")
+
+[node name="Pin6" parent="." unique_id=1907697644 instance=ExtResource("3_h2yge")]
+position = Vector2(406, 610)
+
+[node name="Pin9" parent="." unique_id=383235923 instance=ExtResource("3_h2yge")]
+position = Vector2(140, 583)
+
+[node name="Pin10" parent="." unique_id=1101857890 instance=ExtResource("3_h2yge")]
+position = Vector2(228, 632)
+
+[node name="Pin6" parent="Pin10" unique_id=1906317521 instance=ExtResource("3_h2yge")]
+position = Vector2(196, 53)
+
+[node name="Pin9" parent="Pin10" unique_id=1519330822 instance=ExtResource("3_h2yge")]
+position = Vector2(-73, 99)
+
+[node name="Pin10" parent="Pin10" unique_id=1979057726 instance=ExtResource("3_h2yge")]
+position = Vector2(20, 94)
+
+[node name="Pin6" parent="Pin10/Pin10" unique_id=410013038 instance=ExtResource("3_h2yge")]
+position = Vector2(95, 32)
+
+[node name="Pin9" parent="Pin10/Pin10" unique_id=1551445632 instance=ExtResource("3_h2yge")]
+position = Vector2(-171, 5)
+
+[node name="Pin10" parent="Pin10/Pin10" unique_id=635677150 instance=ExtResource("3_h2yge")]
+position = Vector2(148, -353)
